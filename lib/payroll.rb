@@ -1,6 +1,8 @@
-# 給与計算システムのメインモジュール
+# frozen_string_literal: true
+
+require_relative "payroll/version"
+
 module Payroll
-  VERSION = '0.1.0'
-  
-  # ユーザーストーリーに応じて実装予定
+  class Error < StandardError; end
+  # Your code goes here...
 end

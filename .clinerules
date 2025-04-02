@@ -1,0 +1,42 @@
+# .clinerules
+# Cline configuration for Ruby projects
+
+# Example rule: Suggest running RuboCop after editing Ruby files
+- trigger:
+    file_patterns:
+      - "**/*.rb"
+    events:
+      - file_saved
+  actions:
+    - type: suggest_command
+      command: "bundle exec rubocop -A"
+      message: "RuboCop でコードを自動修正しますか？"
+
+# Example rule: Suggest running tests after editing test files or library code
+- trigger:
+    file_patterns:
+      - "lib/**/*.rb"
+      - "test/**/*.rb"
+      - "spec/**/*.rb" # If using RSpec
+    events:
+      - file_saved
+  actions:
+    - type: suggest_command
+      # Adjust the command based on the testing framework (Minitest or RSpec)
+      # For Minitest (common with `bundle gem`):
+      command: "bundle exec rake test"
+      # For RSpec:
+      # command: "bundle exec rspec"
+      message: "関連するテストを実行しますか？"
+
+# Example rule: Suggest running bundle install after editing Gemfile
+- trigger:
+    file_patterns:
+      - "Gemfile"
+      - "Gemfile.lock"
+    events:
+      - file_saved
+  actions:
+    - type: suggest_command
+      command: "bundle install"
+      message: "Gemfile が変更されました。bundle install を実行しますか？"
