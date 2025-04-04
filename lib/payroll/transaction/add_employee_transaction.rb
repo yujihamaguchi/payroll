@@ -1,6 +1,4 @@
-class Employee
-  attr_accessor :emp_id, :name, :address, :classification, :schedule, :payment_method
-
+class AddEmployeeTransaction
   def initialize(emp_id, name, address)
     @emp_id = emp_id
     @name = name

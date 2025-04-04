@@ -1,4 +1,15 @@
-require "test_helper"
+require_relative "test_helper"
+require_relative "../lib/payroll/transaction/add_hourly_employee"
+require_relative "../lib/payroll/transaction/add_salaried_employee"
+require_relative "../lib/payroll/transaction/add_commissioned_employee"
+require_relative "../lib/payroll/classification/hourly_classification"
+require_relative "../lib/payroll/classification/salaried_classification"
+require_relative "../lib/payroll/classification/commissioned_classification"
+require_relative "../lib/payroll/schedule/weekly_schedule"
+require_relative "../lib/payroll/schedule/monthly_schedule"
+require_relative "../lib/payroll/schedule/biweekly_schedule"
+require_relative "../lib/payroll/method/payment_method"
+require_relative "../lib/payroll/payroll_database"
 
 class AddEmployeeTest < Minitest::Test
   def test_add_hourly_employee
